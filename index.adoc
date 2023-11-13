@@ -1,9 +1,9 @@
-= Homework 
+# Homework
 
-* xref:01/index.md#[]
-* xref:02/index#[]
-* xref:03/index#[]
-* xref:04/index#[]
-* xref:05/index#[]
-* xref:06/index#[]
-* xref:07/index#[]
+* [01 - RDF Graph](01/index.md)
+* [02 - Ontology Modelling](02/index.md)
+* [03](03/index.md)
+* [04](04/index.md)
+* [05](05/index.md)
+* [06](06/index.md)
+* [07](07/index.md)
