@@ -1,7 +1,7 @@
 # Homework
 
-* [01 - RDF Graph](01/index.md)
-* [02 - Ontology Modelling](02/index.md)
+* [01 - RDF Graph](01/)
+* [02 - Ontology Modelling](02/)
 * [03](03/index.md)
 * [04](04/index.md)
 * [05](05/index.md)
