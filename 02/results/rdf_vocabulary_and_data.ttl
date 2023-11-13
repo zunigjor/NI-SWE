@@ -1,0 +1,46 @@
+@prefix ns1: <http://example.com/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Child a rdfs:Class ;
+    rdfs:subClassOf ns1:Person .
+
+ns1:Father a rdfs:Class ;
+    rdfs:subClassOf ns1:Man,
+        ns1:Person .
+
+ns1:Man a rdfs:Class ;
+    rdfs:subClassOf ns1:Person .
+
+ns1:Organisation a rdfs:Class .
+
+ns1:Parent a rdfs:Class ;
+    rdfs:subClassOf ns1:Person .
+
+ns1:Person a rdfs:Class .
+
+<http://example.com/data/Anna> ns1:age 25 ;
+    ns1:hasFather <http://example.com/data/Carl> ;
+    ns1:worksFor <http://example.com/data/IBM> .
+
+ns1:age a rdf:Property ;
+    rdfs:domain ns1:Person ;
+    rdfs:range xsd:integer .
+
+ns1:hasFather a rdf:Property ;
+    rdfs:domain ns1:Person ;
+    rdfs:range ns1:Father .
+
+ns1:officialName a rdf:Property ;
+    rdfs:domain ns1:Organisation ;
+    rdfs:range xsd:string .
+
+ns1:worksFor a rdf:Property ;
+    rdfs:domain ns1:Person ;
+    rdfs:range ns1:Organisation .
+
+<http://example.com/data/Carl> a ns1:Man .
+
+<http://example.com/data/IBM> ns1:officialName "International Business Machines Corporation"^^xsd:string .
+

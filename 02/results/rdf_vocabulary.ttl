@@ -1,0 +1,37 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/terms/Child> a rdfs:Class ;
+    rdfs:subClassOf <http://example.com/terms/Person> .
+
+<http://example.com/terms/Father> a rdfs:Class ;
+    rdfs:subClassOf <http://example.com/terms/Man>,
+        <http://example.com/terms/Person> .
+
+<http://example.com/terms/Man> a rdfs:Class ;
+    rdfs:subClassOf <http://example.com/terms/Person> .
+
+<http://example.com/terms/Organisation> a rdfs:Class .
+
+<http://example.com/terms/Parent> a rdfs:Class ;
+    rdfs:subClassOf <http://example.com/terms/Person> .
+
+<http://example.com/terms/Person> a rdfs:Class .
+
+<http://example.com/terms/age> a rdf:Property ;
+    rdfs:domain <http://example.com/terms/Person> ;
+    rdfs:range xsd:integer .
+
+<http://example.com/terms/hasFather> a rdf:Property ;
+    rdfs:domain <http://example.com/terms/Person> ;
+    rdfs:range <http://example.com/terms/Father> .
+
+<http://example.com/terms/officialName> a rdf:Property ;
+    rdfs:domain <http://example.com/terms/Organisation> ;
+    rdfs:range xsd:string .
+
+<http://example.com/terms/worksFor> a rdf:Property ;
+    rdfs:domain <http://example.com/terms/Person> ;
+    rdfs:range <http://example.com/terms/Organisation> .
+

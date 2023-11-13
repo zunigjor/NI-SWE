@@ -1,0 +1,102 @@
+@prefix ns1: <http://example.com/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Child a rdfs:Class,
+        rdfs:Resource ;
+    rdfs:subClassOf ns1:Child,
+        ns1:Person,
+        rdfs:Resource .
+
+ns1:Father a rdfs:Class,
+        rdfs:Resource ;
+    rdfs:subClassOf ns1:Father,
+        ns1:Man,
+        ns1:Person,
+        rdfs:Resource .
+
+ns1:Man a rdfs:Class,
+        rdfs:Resource ;
+    rdfs:subClassOf ns1:Man,
+        ns1:Person,
+        rdfs:Resource .
+
+ns1:Organisation a rdfs:Class,
+        rdfs:Resource ;
+    rdfs:subClassOf ns1:Organisation,
+        rdfs:Resource .
+
+ns1:Parent a rdfs:Class,
+        rdfs:Resource ;
+    rdfs:subClassOf ns1:Parent,
+        ns1:Person,
+        rdfs:Resource .
+
+ns1:Person a rdfs:Class,
+        rdfs:Resource ;
+    rdfs:subClassOf ns1:Person,
+        rdfs:Resource .
+
+<http://example.com/data/Anna> a ns1:Person,
+        rdfs:Resource ;
+    ns1:age 25 ;
+    ns1:hasFather <http://example.com/data/Carl> ;
+    ns1:worksFor <http://example.com/data/IBM> .
+
+<http://example.com/data/Carl> a ns1:Father,
+        ns1:Man,
+        ns1:Person,
+        rdfs:Resource .
+
+<http://example.com/data/IBM> a ns1:Organisation,
+        rdfs:Resource ;
+    ns1:officialName "International Business Machines Corporation"^^xsd:string .
+
+ns1:age a rdf:Property,
+        rdfs:Resource ;
+    rdfs:domain ns1:Person ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf ns1:age .
+
+ns1:hasFather a rdf:Property,
+        rdfs:Resource ;
+    rdfs:domain ns1:Person ;
+    rdfs:range ns1:Father ;
+    rdfs:subPropertyOf ns1:hasFather .
+
+ns1:officialName a rdf:Property,
+        rdfs:Resource ;
+    rdfs:domain ns1:Organisation ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ns1:officialName .
+
+ns1:worksFor a rdf:Property,
+        rdfs:Resource ;
+    rdfs:domain ns1:Person ;
+    rdfs:range ns1:Organisation ;
+    rdfs:subPropertyOf ns1:worksFor .
+
+rdf:type a rdf:Property ;
+    rdfs:subPropertyOf rdf:type .
+
+rdfs:domain a rdf:Property ;
+    rdfs:subPropertyOf rdfs:domain .
+
+rdfs:range a rdf:Property ;
+    rdfs:subPropertyOf rdfs:range .
+
+rdfs:subClassOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subClassOf .
+
+rdfs:subPropertyOf a rdf:Property ;
+    rdfs:subPropertyOf rdfs:subPropertyOf .
+
+xsd:integer a rdfs:Resource .
+
+xsd:string a rdfs:Resource .
+
+rdfs:Class a rdfs:Resource .
+
+rdf:Property a rdfs:Resource .
+
